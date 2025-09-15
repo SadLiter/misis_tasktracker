@@ -26,8 +26,8 @@
 
 ### 1. Клонировать репозиторий
 ```bash
-git clone https://github.com/SadLiter/misis-tasktracker.git
-cd misis-tasktracker
+git clone https://github.com/SadLiter/misis_tasktracker.git
+cd misis_tasktracker
 ````
 
 ### 2. Создать `.env` из шаблона
