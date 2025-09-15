@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+  <section class="card">
+    <h2>Добавить задачу</h2>
+    <form method="post" action="/tasks" class="form-grid">
+      <input name="title" placeholder="Заголовок" required />
+      <textarea name="description" rows="3" placeholder="Описание (необязательно)"></textarea>
+      <label class="small muted">Срок (необязательно): <input type="datetime-local" name="due_date" /></label>
+      <button type="submit" class="btn">Добавить</button>
+    </form>
+  </section>
+
+  <section class="card" style="margin-top:16px">
+    <h2>Задачи</h2>
+    {% if tasks %}
+      <ul class="tasks">
+        {% for t in tasks %}
+          <li class="task">
+            <div>
+              <div class="title">{{ t.title }}</div>
+              {% if t.description %}<div class="desc">{{ t.description }}</div>{% endif %}
+              <div class="meta">
+                <span class="badge {{ t.status.value }}">{{ t.status.value }}</span>
+                {% if t.due_date %}<span class="muted small">до {{ t.due_date.strftime('%d.%m.%Y %H:%M') }}</span>{% endif %}
+                <span class="muted small">создано {{ t.created_at.strftime('%d.%m.%Y %H:%M') }}</span>
+              </div>
+            </div>
+            <div class="actions">
+              <form method="post" action="/tasks/{{ t.id }}/toggle"><button class="btn-secondary" title="Сменить статус">Сменить статус</button></form>
+              <form method="post" action="/tasks/{{ t.id }}/delete" onsubmit="return confirm('Удалить задачу?')"><button class="btn-danger" title="Удалить">Удалить</button></form>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="muted">Пока нет задач. Добавьте первую выше ↑</p>
+    {% endif %}
+  </section>
+{% endblock %}

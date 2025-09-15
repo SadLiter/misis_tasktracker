@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# VS Code / PyCharm
+.vscode/
+.idea/
+
+# Logs
+*.log
+logs/
+backend/app/app.log
+
+# Python cache
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+
+# Env files
+.env
+.env.*
+
+# PostgreSQL volume (Docker will manage this)
+pgdata/
+
+# MacOS
+.DS_Store

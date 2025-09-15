@@ -1,0 +1,34 @@
+:root{
+  --bg:#0b1220; --card:#111a2b; --muted:#9bb2d6; --text:#e6edf3; --line:#273a5f;
+  --primary:#2b6cff; --primary-dark:#1f52c2; --danger:#ff4d6d; --accent:#60a5fa;
+}
+*{box-sizing:border-box}
+body{margin:0; background:var(--bg); color:var(--text); font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Arial}
+.container{max-width:900px; margin:0 auto; padding:24px}
+.card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px; box-shadow:0 6px 22px rgba(0,0,0,.25)}
+.muted{color:var(--muted)} .small{font-size:12px}
+.accent{color:var(--accent)}
+
+h1,h2{margin:0 0 8px}
+
+.form-grid{display:grid; gap:12px}
+input, textarea{width:100%; padding:10px 12px; border-radius:10px; border:1px solid var(--line); background:#0f1626; color:var(--text)}
+button{cursor:pointer}
+.btn{background:var(--primary); border:none; padding:10px 14px; border-radius:10px; color:white; font-weight:600}
+.btn:hover{background:var(--primary-dark)}
+.btn-secondary{background:transparent; border:1px solid var(--line); padding:8px 12px; border-radius:10px; color:var(--text)}
+.btn-secondary:hover{border-color:var(--accent)}
+.btn-danger{background:transparent; border:1px solid var(--danger); color:#ffd4dc; padding:8px 12px; border-radius:10px}
+.btn-danger:hover{background:rgba(255,77,109,.12)}
+
+.tasks{list-style:none; margin:0; padding:0}
+.task{display:flex; align-items:flex-start; justify-content:space-between; gap:12px; padding:12px 0; border-bottom:1px dashed var(--line)}
+.task:last-child{border-bottom:none}
+.title{font-weight:700}
+.desc{opacity:.9; margin-top:4px}
+.meta{display:flex; gap:8px; align-items:center; margin-top:6px}
+.badge{font-size:12px; padding:2px 8px; border-radius:999px; background:#1d2a44; border:1px solid var(--line)}
+.badge.todo{background:#1b2a57}
+.badge.in_progress{background:#20346f}
+.badge.done{background:#1c3d5e; color:#a7ffd6; border-color:#2a6f64}
+.actions{display:flex; gap:8px}
